@@ -14,7 +14,7 @@ app.post('/', async (req, res) => {
 
 	data.forEach(async element => promises.push(new Reaction(element.username, element.password, element.post).react(element.reaction)));
 
-	return res.status(200).send((await Promise.all(promises)).map((e, i) => ({ ...e, username: data[i] })));
+	return res.status(200).send((await Promise.all(promises)).map((e, i) => ({ ...e, username: data[i].username })));
 });
 
 app.post('*', (req, res) => res.status(404).send());
