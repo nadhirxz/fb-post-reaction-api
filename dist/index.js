@@ -71,5 +71,6 @@ app.post('/', function (req, res) { return __awaiter(void 0, void 0, void 0, fun
         }
     });
 }); });
+app.post('*', function (req, res) { return res.status(404).send(); });
 var port = process.env.POST || 3000;
 app.listen(port, function () { return console.log("Server started on port " + port); });
