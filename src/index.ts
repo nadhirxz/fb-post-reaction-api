@@ -19,5 +19,5 @@ app.post('/', async (req, res) => {
 
 app.post('*', (req, res) => res.status(404).send());
 
-const port = process.env.POST || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server started on port ${port}`));
